@@ -26,7 +26,7 @@ P.S : during ctf time i wasted more than hour just playing the game.
 First step is to know what score we have to reach to get the flag so after doing simple strings extraction we can notice interesting string ("Score 0xab56")
 
 
-![](/assets/images/flappy-ship/00.png))
+![](/assets/images/flappy-ship/00.PNG)
 
 we need to make your score = 0xab56 (43862 in dec) but when you make it equal to this number nothing happens 
 actually this made me give up on trying solve the challenge during ctf running time but now i can see what was wrong 
@@ -38,11 +38,11 @@ but we have no clue what the value should be to give us the rest of the flag
 we can do a little trick  with cheat engine 
 we can search for the lives address then find what access to it
 
-![](/assets/images/flappy-ship/01.png)
+![](/assets/images/flappy-ship/01.PNG)
 
 the instruction at 0040442A seems interesting, when we inspect it by clicking more information button 
 
-![](/assets/images/flappy-ship/03.png)
+![](/assets/images/flappy-ship/03.PNG)
 
 {% highlight asm %}
 cmp [rcx+10],000056AB
@@ -51,7 +51,7 @@ cmp [rcx+10],000056AB
 it compares the lives number with the value (0x56ab in dec 22187)
 and again when we change it we have to change the value to 22188 so when the asteroid hits our ship 22188 -1 = 22187 and this will print the second half of flag 
 
-![](/assets/images/flappy-ship/04.png)
+![](/assets/images/flappy-ship/04.PNG)
 
 ### Useful resources :
 
