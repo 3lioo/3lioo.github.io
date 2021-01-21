@@ -26,7 +26,7 @@ P.S : during ctf time i wasted more than hour just playing the game.
 First step is to know what score we have to reach to get the flag so after doing simple strings extraction we can notice interesting string ("Score 0xab56")
 
 
-![](/assets/images/flappy-ship/00.png?raw=true)
+![](./assets/images/flappy-ship/00.png)
 
 we need to make your score = 0xab56 (43862 in dec) but when you make it equal to this number nothing happens 
 actually this made me give up on trying solve the challenge during ctf running time but now i can see what was wrong 
