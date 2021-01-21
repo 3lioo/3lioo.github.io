@@ -1,7 +1,7 @@
 ---
 title: "Flappy ship challenge (Syberctf writup)"
 layout: post
-cayagories: writups
+categories: writups
 ---
 ## Challenge name : Flappy ship
 ## Description :  
