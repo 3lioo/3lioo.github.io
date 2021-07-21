@@ -5,7 +5,7 @@ permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
 date_format: "%B %d, %Y"
-google_analytics: G-GVQ45ND6BG
+google_analytics: UA-202810017-1
 # Layout
 
 show_social: true          # show site description and social links in the footer
