@@ -40,7 +40,7 @@ after deobfuscating the file it uses the [unescape](https://www.w3schools.com/js
 
  
 
-![](assets/images/phishing_case/first_html.png)
+![](/assets/images/phishing_case/first_html.png)
 
 <div align="center">The generated html page</div>
 
@@ -91,6 +91,7 @@ While trying to search for any other clues in the generated html file I came acr
 
 
 ![](/assets/images/phishing_case/intimg.png)
+
 
 
 
