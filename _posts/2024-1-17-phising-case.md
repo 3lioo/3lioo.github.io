@@ -79,7 +79,9 @@ The generated html file seems to be an old phishing page, and by viewing its sou
 
 
 ![](/assets/images/phishing_case/inthtml1.png)
+
 ![](/assets/images/phishing_case/inthtml2.png)
+
 
 The decoded URL is hxxps://lslamic-relief[.]org/Irworldwide/oba[.]php which is down in the time of writing this post.
 
@@ -87,10 +89,13 @@ The decoded URL is hxxps://lslamic-relief[.]org/Irworldwide/oba[.]php which is d
 
 While trying to search for any other clues in the generated html file I came across this weird PNG link for the background image 
 
+
 ![](/assets/images/phishing_case/intimg.png)
 
 
+
 the image is hosted on hxxps://swatantraindialive7[.]com/wp-includes/  which means it probably compromised by the threat actor
+
 
 ![](/assets/images/phishing_case/imgopen.png)
 
