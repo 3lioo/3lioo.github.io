@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "_posts/2024-1-17-phising-case.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": true
               }
             }
@@ -148,10 +148,10 @@
   },
   "active": "69443409e862f64b",
   "lastOpenFiles": [
-    "_posts/2020-11-19-new-rfc.md",
     "_posts/2021-9-9-malware-re.md",
-    "_posts/2021-01-21-flappy-ship.md",
     "_posts/2024-1-17-phising-case.md",
+    "_posts/2020-11-19-new-rfc.md",
+    "_posts/2021-01-21-flappy-ship.md",
     "About_me.md",
     "assets/images/phishing_case/resultcloud.png",
     "imgcontainer.png",

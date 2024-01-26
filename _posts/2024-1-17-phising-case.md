@@ -95,7 +95,7 @@ the image is hosted on hxxps://swatantraindialive7[.]com/wp-includes/  which mea
 
 back to the PNG file and looking through the web it looks like this PNG file is used by a lot of similar phishing pages and seems to be linked to a phish-kit, searching for the PNG hash using urlscan.io results thousands of phish sites 
 
-![][/assets/images/phishing_case/imgsearch1.png]
+![](/assets/images/phishing_case/imgsearch1.png)
 
 so I decoded the base64 image which have been used in the generated html file by the first js file and searched  for its hash using urlscan.io and got thousands of phishing sites similar to the one we had (a lot of this sites are hosted by Cloudflare Pages.dev and Workers.dev domains ).
 
