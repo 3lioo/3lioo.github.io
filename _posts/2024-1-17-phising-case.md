@@ -1,7 +1,7 @@
 ---
 title: Phishing Case
 layout: post
-categories: Phish
+categories: Phishing
 ---
 
 
@@ -22,7 +22,7 @@ The view source is disabled so I inspect the HTTP request using burp after refre
 
 
 
-![][/assets/images/phishing_case/requsted_js_files.png]
+![](/assets/images/phishing_case/requsted_js_files.png)
 <div align=center>The source of the phishing page</div>
 
 Now we have tow js files to analyze 
@@ -30,24 +30,24 @@ Now we have tow js files to analyze
 
 The first script is responsible for creating the html template for the phishing page
 
-![][/assets/images/phishing_case/first_js.png]
+![](/assets/images/phishing_case/first_js.png)
 
 <div align="center">The first obfuscated js file</div>
 
 after deobfuscating the file it uses the [unescape](https://www.w3schools.com/jsref/jsref_unescape.asp) function to generate html page
 
-![][/assets/images/phishing_case/debof_first_js.png]
+![](/assets/images/phishing_case/debof_first_js.png)
 
  
 
-![][assets/images/phishing_case/first_html.png]
+![](assets/images/phishing_case/first_html.png)
 <div align="center">The generated html page</div>
 
 ### Second file
 
 After deobfuscating the second file It appears to be the js file which is responsible for sending the entered credentials to the attacker.
 
-![][/assets/images/phishing_case/second_js.png]
+![](/assets/images/phishing_case/second_js.png)
 
 <div align="center">The sending part of code </div>
 
@@ -55,30 +55,30 @@ It sends a post request after using the [atob](https://developer.mozilla.org/en-
 The decoded URL is hxxps://gsenddata[.]com/web/dropbox[.]php
 
 
-![][/assets/images/phishing_case/reciv1.png]
+![](/assets/images/phishing_case/reciv1.png)
 
 The domain is hosting additional files that looks like serving the same purpose.
 
-![][/assets/images/phishing_case/addfile2.png]
-![][/assets/images/phishing_case/addfiles1.png]
+![](/assets/images/phishing_case/addfile2.png)
+![](/assets/images/phishing_case/addfiles1.png)
 
 ## Back to start point
 
 Using some google search and parsing any trace for using the same domain that hosts the js files hxxps://eu.starton-ipfs[.]com I found an interesting file hxxps://eu.starton-ipfs[.]com/ipfs//bafybeiffgj723rrq4ejwm7iydforlu2gu4xaog6xhhf2knoyk4ktt53y4y
-![][/assets/images/phishing_case/int.png]
+![](/assets/images/phishing_case/int.png)
 
 by scrolling  to end of the file we can assume that it writes the em variable to the document 
 
-![][/assets/images/phishing_case/intdown.png]
+![](/assets/images/phishing_case/intdown.png)
 
 saving this js file and debugging it to extract the string stored in em variable resulting a new html code  
 
-![][/assets/images/phishing_case/newhtml.png]
+![](/assets/images/phishing_case/newhtml.png)
 The generated html file seems to be an old phishing page, and by viewing its source there is a using of similar method to the one we saw before, It also stores the base64 encoded URL (in a variable named file) then sends the entered credentials to the URL after decoding it.
 
 
-![][/assets/images/phishing_case/inthtml1.png]
-![][/assets/images/phishing_case/inthtml2.png]
+![](/assets/images/phishing_case/inthtml1.png)
+![](/assets/images/phishing_case/inthtml2.png)
 
 The decoded URL is hxxps://lslamic-relief[.]org/Irworldwide/oba[.]php which is down in the time of writing this post.
 
@@ -86,12 +86,12 @@ The decoded URL is hxxps://lslamic-relief[.]org/Irworldwide/oba[.]php which is d
 
 While trying to search for any other clues in the generated html file I came across this weird PNG link for the background image 
 
-![][/assets/images/phishing_case/intimg.png]
+![](/assets/images/phishing_case/intimg.png)
 
 
 the image is hosted on hxxps://swatantraindialive7[.]com/wp-includes/  which means it probably compromised by the threat actor
 
-![][/assets/images/phishing_case/imgopen.png]
+![](/assets/images/phishing_case/imgopen.png)
 
 back to the PNG file and looking through the web it looks like this PNG file is used by a lot of similar phishing pages and seems to be linked to a phish-kit, searching for the PNG hash using urlscan.io results thousands of phish sites 
 
@@ -99,12 +99,12 @@ back to the PNG file and looking through the web it looks like this PNG file is 
 
 so I decoded the base64 image which have been used in the generated html file by the first js file and searched  for its hash using urlscan.io and got thousands of phishing sites similar to the one we had (a lot of this sites are hosted by Cloudflare Pages.dev and Workers.dev domains ).
 
-![][/assets/images/phishing_case/imgcontainer.png]
+![](/assets/images/phishing_case/imgcontainer.png)
 <div align="center">The base64 PNG image </div>
 
 
 
-![][/assets/images/phishing_case/resultcloud.png]
+![](/assets/images/phishing_case/resultcloud.png)
 
 <div align="center">The results of searching for the base64 image </div>
 
