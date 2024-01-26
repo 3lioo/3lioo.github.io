@@ -41,6 +41,7 @@ after deobfuscating the file it uses the [unescape](https://www.w3schools.com/js
  
 
 ![](assets/images/phishing_case/first_html.png)
+
 <div align="center">The generated html page</div>
 
 ### Second file
