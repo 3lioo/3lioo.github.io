@@ -13,8 +13,8 @@ In this post I'll go through interesting URL submitted I saw on the any run publ
 
 hxxps://pub-e03b84ede40949d783b7ef41e8b36c50[.]r2[.]dev/web.html#Mahran.Sheikh@syriatel[.]com.sy
 
-when visiting the URL it looks like an outlook login page with prefilled email address Mahran.Sheikh@syriatel[.]com[.]sy which is written in the URL after the [#] character (I think this email received the spam email that leads to the phish site).
-The view source is disabled so I inspect the HTTP request using burp after refreshing the page.
+when visiting the URL it looks like an Outlook login page with the prefilled email address Mahran.Sheikh@syriatel[.]com[.]sy which is written in the URL after the [#] character (I think this email received the spam email that led to the phishing site).
+The view source is disabled so I inspect the HTTP request using burp after refreshing the page
 
 
 ![](/assets/images/phishing_case/phish_page.png)
@@ -68,14 +68,14 @@ The domain is hosting additional files that looks like serving the same purpose.
 Using some google search and parsing any trace for using the same domain that hosts the js files hxxps://eu.starton-ipfs[.]com I found an interesting file hxxps://eu.starton-ipfs[.]com/ipfs//bafybeiffgj723rrq4ejwm7iydforlu2gu4xaog6xhhf2knoyk4ktt53y4y
 ![](/assets/images/phishing_case/int.png)
 
-by scrolling  to end of the file we can assume that it writes the em variable to the document 
+by scrolling  to the end of the file we can assume that it writes the em variable to the document 
 
 ![](/assets/images/phishing_case/intdown.png)
 
-saving this js file and debugging it to extract the string stored in em variable resulting a new html code  
+saving this js file and debugging it to extract the string stored in the em variable resulting in a new HTML code  
 
 ![](/assets/images/phishing_case/newhtml.png)
-The generated html file seems to be an old phishing page, and by viewing its source there is a using of similar method to the one we saw before, It also stores the base64 encoded URL (in a variable named file) then sends the entered credentials to the URL after decoding it.
+The generated HTML file seems to be an old phishing page, and by viewing its source there is a using of a similar method to the one we saw before, It also stores the base64 encoded URL (in a variable named file) and then sends the entered credentials to the URL after decoding it.
 
 
 ![](/assets/images/phishing_case/inthtml1.png)
@@ -83,11 +83,11 @@ The generated html file seems to be an old phishing page, and by viewing its sou
 ![](/assets/images/phishing_case/inthtml2.png)
 
 
-The decoded URL is hxxps://lslamic-relief[.]org/Irworldwide/oba[.]php which is down in the time of writing this post.
+The decoded URL is hxxps://lslamic-relief[.]org/Irworldwide/oba[.]php which is down at the time of writing this post.
 
 ### Image of interest
 
-While trying to search for any other clues in the generated html file I came across this weird PNG link for the background image 
+While trying to search for any other clues in the generated HTML file I came across this weird PNG link for the background image 
 
 
 ![](/assets/images/phishing_case/intimg.png)
@@ -100,11 +100,11 @@ the image is hosted on hxxps://swatantraindialive7[.]com/wp-includes/  which mea
 
 ![](/assets/images/phishing_case/imgopen.png)
 
-back to the PNG file and looking through the web it looks like this PNG file is used by a lot of similar phishing pages and seems to be linked to a phish-kit, searching for the PNG hash using urlscan.io results thousands of phish sites 
+back to the PNG file and looking through the web it looks like this PNG file is used by a lot of similar phishing pages and seems to be linked to a phish kit, searching for the PNG hash using urlscan.io results thousands of phish sites 
 
 ![](/assets/images/phishing_case/imgsearch1.png)
 
-so I decoded the base64 image which have been used in the generated html file by the first js file and searched  for its hash using urlscan.io and got thousands of phishing sites similar to the one we had (a lot of this sites are hosted by Cloudflare Pages.dev and Workers.dev domains ).
+so I decoded the base64 image which has been used in the generated HTML file by the first js file and searched for its hash using urlscan.io and got thousands of phishing sites similar to the one we had (a lot of these sites are hosted by Cloudflare Pages.dev and Workers.dev domains ).
 
 ![](/assets/images/phishing_case/imgcontainer.png)
 <div align="center">The base64 PNG image </div>
@@ -134,3 +134,5 @@ so I decoded the base64 image which have been used in the generated html file by
 
 - [https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/its-raining-phish-and-scams-how-cloudflare-pages-dev-and-workers-dev-domains-get-abused/](https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/its-raining-phish-and-scams-how-cloudflare-pages-dev-and-workers-dev-domains-get-abused/)
 - [https://obf-io.deobfuscate.io/](https://obf-io.deobfuscate.io/)
+- [https://app.any.run/submissions/](https://app.any.run/submissions/)
+- [https://urlscan.io/](https://urlscan.io/)
