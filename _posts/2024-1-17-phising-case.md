@@ -11,9 +11,9 @@ In this post I'll go through interesting URL submitted I saw on the any run publ
 
 ## Hunting the source
 
-hxxps://pub-e03b84ede40949d783b7ef41e8b36c50[.]r2[.]dev/web.html#Mahran.Sheikh@syriatel[.]com.sy
+hxxps://pub-e03b84ede40949d783b7ef41e8b36c50[.]r2[.]dev/web.html#<span style="color: red;">REDACTED</span>@syriatel[.]com.sy
 
-when visiting the URL it looks like an Outlook login page with the prefilled email address Mahran.Sheikh@syriatel[.]com[.]sy which is written in the URL after the [#] character (I think this email received the spam email that led to the phishing site).
+when visiting the URL it looks like an Outlook login page with the prefilled email address <span style="color: red;">REDACTED</span>@syriatel[.]com[.]sy which is written in the URL after the [#] character (I think this email received the spam email that led to the phishing site).
 The view source is disabled so I inspect the HTTP request using burp after refreshing the page
 
 
