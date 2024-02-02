@@ -25,7 +25,7 @@ The view source is disabled so I inspect the HTTP request using burp after refre
 ![](/assets/images/phishing_case/requsted_js_files.png)
 <div align=center>The source of the phishing page</div>
 
-Now we have tow js files to analyze 
+Now we have two js files to analyze 
 ### First one:
 
 The first script is responsible for creating the html template for the phishing page
